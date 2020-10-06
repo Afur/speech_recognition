@@ -101,6 +101,7 @@ public class SwiftSpeechRecognitionPlugin: NSObject, FlutterPlugin, SFSpeechReco
     if audioEngine.isRunning {
       audioEngine.stop()
       recognitionRequest?.endAudio()
+      audioEngine.inputNode?.removeTap(onBus: 0)
     }
     result(false)
   }
@@ -176,7 +177,7 @@ public class SwiftSpeechRecognitionPlugin: NSObject, FlutterPlugin, SFSpeechReco
     case "pl_PL":
         return speechRecognizerPl
     default:
-      return speechRecognizerFr
+      return speechRecognizerEn
     }
   }
 
