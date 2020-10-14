@@ -30,6 +30,6 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-task wrapper(type: Wrapper) {
+wrapper {
     gradleVersion = '2.14.1'
 }
